@@ -12,7 +12,7 @@ public class App {
 
     private static final  Logger logger = LoggerFactory.getLogger( App.class );
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         BufferedReader bufferedReader = new BufferedReader( new InputStreamReader( System.in ) );
 
@@ -26,8 +26,17 @@ public class App {
         Long number2 = Long.valueOf( textNumber2 );
 
         BasicCalculator calculator = new BasicCalculator();
-        Long result = calculator.sum( number1, number2 );
 
+        Long result = calculator.sum( number1, number2 );
         System.out.println( number1 + " + " + number2 + " = " + result );
+
+        Long result_substracting = calculator.subtract( number1, number2 );
+        System.out.println( number1 + " - " + number2 + " = " + result_substracting );
+
+        Long result_multiplying = calculator.multiply( number1, number2 );
+        System.out.println( number1 + " x " + number2 + " = " + result_multiplying );
+
+        Long result_dividing = calculator.divide( number1, number2 );
+        System.out.println( number1 + " ÷ " + number2 + " = " + result_dividing );
     }
 }
